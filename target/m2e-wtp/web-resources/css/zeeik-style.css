@@ -1,0 +1,262 @@
+body{
+	font-family: 'Droid Sans', sans-serif;
+	color: #222;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	min-height: 600px;
+}
+
+.zeeik-page{
+
+	position: absolute;
+	margin: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	width: 100%;	
+	heiht:100%;
+	min-width: 1030px;
+}
+
+p{
+    padding: 10px;
+    font-size: 15px;
+    line-height: 20px;
+    overflow: hidden;
+    min-width: 205px;
+    width: 100%;
+    margin: 10px 0;
+    word-break: normal;
+    float: left;	
+    display: block;
+    box-sizing: border-box;
+}
+
+h1{
+	color: #333;
+    font-size: 27px;
+    font-weight: bold;
+    height: auto;
+    line-height: 1.3em;
+    overflow: hidden;
+    min-width: 105px;
+    clear: both;
+    padding: 2px 5px;
+    margin-top: 20px;
+}
+
+#vlist{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
+    overflow: hidden;
+    float: left;
+    box-sizing: border-box;	
+}
+
+#vlist li.m-videolist{
+	width:100%;
+	height:50px;
+}
+
+#vlist li{
+	width: 160px;
+	float:left;
+	position: relative;
+	margin-right: 3px;
+	height: 160px;
+	max-height: 180px;
+	cursor: default;
+}
+
+li span{
+	position: absolute;
+	background: #333333;
+	opacity: .5;
+	color: #ffffff;
+	z-index: 10;
+	display: block;
+	right: 0;
+	bottom: 5px;
+	font-size: 13px;
+	padding: 3px 5px;
+}
+
+.videolistItem{
+	float:left;
+	position: relative;
+	margin: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	z-index:13;
+}
+
+.m-videolistItem{
+	border-top: 1px solid #999;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+div.vtitle{
+	position:relative;
+	float:left;
+	overflow: hidden;
+	font-size: 14px;
+	display: block;
+	box-sizing: border-box;
+	line-height: 20px;
+	margin: 0;
+	margin-top: 5px;
+	word-wrap: break-word;
+}
+
+div.m-vtitle{
+	position:relative;
+	float:left;
+	overflow: hidden;
+	font-size: 14px;
+	display: block;
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+div.top-header{
+	margin: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background: #EFEFEF;
+	display: block;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	z-index: 9999;
+}
+div.bottom-container{
+	
+}
+div.container{
+	position: absolute;
+	float:right;
+	max-width:984px;
+	overflow:hidden;
+	height:auto;
+	background: #ffffff;
+	top: 50px;
+	width: 100%;
+}
+
+.rhs-player{
+	position: fixed;
+	padding-top: 50px;
+	width: 176px;
+	visibility:visible;
+	height:100%;
+	right:0;
+	top: 0;
+	background: #f1f1f1;
+	z-index:15;	
+}
+
+#player-wrapper{
+	position:relative;
+	display:block;
+	width:100%;
+	height:100%;
+
+}
+
+#vm-description{
+    color: #222;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 23px;
+    overflow: hidden;
+    min-width: 205px;
+    width: 100%;
+    margin: 0px 0 10px 0px;
+    word-break: normal;
+    float: left;
+    clear: both;
+    position: relative;
+    border-radius: 2px;
+    background: #fafafa;
+    display: block;
+    box-sizing: border-box;
+}
+
+.control-container{
+	position: absolute;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+.playing-icon{
+position: absolute;
+    left: 60px;
+    top: 25px;
+    width:40px;
+    height:40px;
+    z-index: 13;
+}
+
+
+#progressBar{
+	position: absolute;
+    display: none;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background: #c7c7c7;
+    opacity: .8;
+    z-index:11;
+}
+
+.m-videolist > #progressBar{
+/* 	top:6px !important; */
+	background:#ddd !important;
+	opacity:.7;
+	
+}
+#progressBar div{
+	position: absolute;
+    display: block;
+    width: 0%;
+    bottom: 0;
+    height: 100%;
+    background: #8FD1FF;
+    z-index:12;
+}
+
+.grey-background{
+	background:#f9f9f9;
+}
+.ytThumbnail{
+    width: 61px;
+    height: 46px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    border: 1px solid #eee;
+}

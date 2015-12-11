@@ -1,0 +1,127 @@
+
+<html itemscope="" itemtype="http://schema.org/WebPage" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:fb="http://ogp.me/ns/fb#"
+	xmlns:og="http://opengraphprotocol.org/schema/" lang="en" xml:lang="en">
+<link rel="shortcut icon" href="images/favicon.ico?v=2" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="css/zeeik-style.css" />
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+<body>
+<script type="text/javascript">
+
+//tempoary data 
+
+var thumbnailBaseUrl = "http://i.ytimg.com/vi/";
+var thumbnailFileName = "mqdefault.jpg"
+
+var title = "Overexposed (2012) - Maroon 5 [Album]";
+var description = "Overexposed is the fourth studio album by the American pop rock band Maroon 5, released on June 20, 2012, by A&M Octone Records. Wikipedia";
+
+//vtitle should be escaped with quotation marks
+var videos = [{id:"GFnuvP6GxqY", vtitle:"One\'s More Night",  startSec:0, vlength: "219"},
+               {id:"GFnuvP6GxqY", vtitle:"Payphone",  startSec:0, vlength: "219"},
+               {id:"GFnuvP6GxqY", vtitle:"DayLight",  startSec:0, vlength: "219"},
+               {id:"GFnuvP6GxqY", vtitle:"Lucky Strike",  startSec:0, vlength: "23319"},
+               {id:"GFnuvP6GxqY", vtitle:"The Man Who Never Lied",  startSec:0, vlength: "219"},
+               {id:"GFnuvP6GxqY", vtitle:"Payphone",  startSec:0, vlength: "219"},
+               {id:"GFnuvP6GxqY", vtitle:"DayLight",  startSec:0, vlength: "219"},
+               {id:"GFnuvP6GxqY", vtitle:"Lucky Strike",  startSec:0, vlength: "23319"},
+               {id:"GFnuvP6GxqY", vtitle:"The Man Who Never Lied",  startSec:0, vlength: "219"},
+               {id:"GFnuvP6GxqY", vtitle:"Love Somebody",  startSec:0, vlength: "219"}];
+
+// temporary data end
+
+$( document ).ready(function() {
+	var $ul = $("#vlist");
+	var $div = $("#vlist-container");
+	
+	//zeeik title
+	document.getElementById('vm-title').innerHTML = title;
+	
+	//zeeik desctiption
+	document.getElementById('vm-description').innerHTML = description;
+	
+	//populate videos
+	var div =  document.getElementById('vlist-containter');
+	var ul = document.createElement('vlist');
+	$ul.html(strVideoList());
+	$div.html(ul);
+	
+	//add playging event
+	$(".thumbnail").click(function(){
+	    
+	});)
+	
+	
+	
+});
+
+
+function strVideoList(){
+	var array = []; 
+	for(var i = 0; i < videos.length; i++){
+		var thumbsrc = thumbnailBaseUrl+videos[i].id+"/"+ thumbnailFileName
+		var vlengthformat = videos[i].vlength.toHHMMSS();
+		var vNumber = i+1;
+		vNumber = (vNumber < 10)? "0"+vNumber+". " : vNumber+". "; // add numbering 01. 02. 03. ... 10.
+	    array[i] = '<li><div class="thumbnail" data-youtubeId="+videos[i].id+"><img itemprop="thumbnail" src='+thumbsrc+' width="160" height="90"><span itemprop="duration" class="zeeik-vtime">'+vlengthformat+'</span></div><div class="cVdoB"><div style="left: 0%; width: 100%;"></div></div><div itemprop="name" class="vtitle"  title="'+vNumber+videos[i].vtitle+'">'+vNumber+videos[i].vtitle+'</div></li>'; 
+	}
+	return array.join('');
+}
+
+//move to js file or handle with java
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    
+    var time    = "";
+    if(hours === "00")
+    	time    = minutes+':'+seconds;
+    else
+    	time    = hours+':'+minutes+':'+seconds;
+    
+    return time;
+}
+
+</script>
+
+<div class="top-header">
+</div>
+
+<div class="rhs-player">
+	<div style="position:relative;width:176px;height:144px;overflow:hidden;">
+	  <div style="position:absolute;top:0;left:0">
+	    <iframe width="176" height="144" 
+	      src="https://www.youtube.com/embed/lcbkCcCwdbg?fs=0&rel=0&showinfo=0&enablejsapi=1&cc_load_policy=0&iv_load_policy=3&modestbranding=1&format=6">
+	    </iframe>
+	  </div>
+	</div>
+<!-- <iframe width="100%" height="60" src="https://www.youtube.com/embed/YQHsXMglC9A" frameborder="0" allowfullscreen></iframe> -->
+</div>
+
+<div class="container">
+
+	<h1 id="vm-title"></h1>
+	
+	<p id="vm-description"></p>
+	
+	<div id="vlist-containter">
+		<ul id="vlist"></ul>
+	</div>
+
+
+</div>
+
+<div class="bottom-container">
+</div>
+
+</body>
+</html>
